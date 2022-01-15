@@ -5,7 +5,7 @@ spring boot side project
 ### test-register-form
 #### 專案開始日期: 2022-01-11
 #### 使用技術: 
-**1. runtime**  
+**1. basic**  
 spring boot-2.6.2  
 JDK8  
 Maven  
