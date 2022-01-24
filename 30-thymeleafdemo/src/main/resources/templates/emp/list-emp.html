@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<title>員工資料表</title>
+</head>
+<body>
+<div class="container">
+	
+	<h2>員工資料表</h2>
+	<hr>
+	<!-- add button -->
+	<a class="btn btn-info" th:href="@{/employee/addForm}" >新增員工</a>
+	
+	<table class="table">
+	<thead>
+		<tr>
+			<th>員工編號</th>
+			<th>姓名</th>
+			<th>職稱</th>
+			<th>上級主管</th>
+			<th>到職日期</th>
+			<th>薪資</th>
+			<th>獎金</th>
+			<th>部門編號</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="emp : ${employees}">
+			<td th:text="${emp.id}"/>
+			<td th:text="${emp.name}" />
+			<td th:text="${emp.job}" />
+			<td th:text="${emp.manager}" />
+			<td th:text="${emp.hiredate}" />
+			<td th:text="${emp.salary}" />
+			<td th:text="${emp.salary}" />
+			<td th:text="${emp.commission}" />
+			<td th:text="${deptno}" />
+			<td>
+			<!-- send a request with param: empno=${emp.id} -->
+			<a class="btn btn-warning" th:href="@{/employee/detail(empno=${emp.id})}">詳細資料</a>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	
+	<h2>部門資料表</h2>
+	<hr>
+	<table class="table">
+	<thead>
+		<tr>
+			<th>部門編號</th>
+			<th>部門名稱</th>
+			<th>地址</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="dept : ${department}">
+			<td th:text="${dept.deptno}" />
+			<td th:text="${dept.name}" />
+			<td th:text="${dept.location}" />
+		</tr>
+	</tbody>
+	</table>
+	
+	
+	
+	
+
+</div>
+</body>
+</html>
