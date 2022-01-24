@@ -18,6 +18,7 @@ spring data jpa
 thymeleaf  
 connector J  
 #### 專案內容:
+<<<<<<< HEAD
 1. **註冊&登入驗證，密碼透過Bcrypt 加密存入資料庫**
 2. **view 使用html, thymeleaf**
 3. **使用spring data jpa 作為ORM framwork**
@@ -38,3 +39,7 @@ thymeleaf
 connector J  
 #### 專案內容:
 透過spring data jpa進行cmdev.emp資料表的crud。網頁使用thymeleaf模板、bootstrap渲染。
+**1. 註冊&登入驗證，密碼透過Bcrypt 加密存入資料庫**  
+**2. view 純html，使用thymeleaf**  
+**3. 使用spring data jpa 作為ORM framwork**  
+
